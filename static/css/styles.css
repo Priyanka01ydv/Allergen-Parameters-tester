@@ -1,0 +1,125 @@
+/* Applying Lana Del Rey-inspired vintage design */
+body {
+    font-family: 'Dancing Script', cursive; /* Lana Del Rey-like font */
+    background-color: #f3f3f3; /* Soft background */
+    color: #800000; /* Dark red text */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('/static/images/protein_structure_watermark.png'); /* Protein structure watermark */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+/* Semi-transparent overlay for better readability */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: -1;
+}
+
+/* Styling for the container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Title and header styling */
+.title {
+    font-size: 3em;
+    color: #d50000; /* Lana-inspired red */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Soft shadow for text */
+    margin-top: 100px;
+    font-family: 'Dancing Script', cursive; /* Vintage font */
+}
+
+/* Upload button styling */
+#uploadButton {
+    padding: 12px 30px;
+    background-color: #d50000;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#uploadButton:hover {
+    background-color: #9b0000;
+    transform: scale(1.05);
+}
+
+/* Styling for the results table */
+.results-table {
+    width: 80%;
+    margin-top: 40px;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.8); /* Light transparent background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.results-table th, .results-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+    color: #800000;
+    font-size: 16px;
+}
+
+.results-table th {
+    background-color: #d50000;
+    color: white;
+}
+
+/* Loading message styling */
+.loading-message {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #555;
+    font-style: italic;
+}
+
+/* Ribbon animation for cute visual */
+.ribbons {
+    display: none;
+    margin-top: 30px;
+    position: relative;
+    height: 50px;
+    animation: ribbonAnimation 2s infinite;
+}
+
+@keyframes ribbonAnimation {
+    0% { left: -150px; }
+    100% { left: 100%; }
+}
+
+.ribbon {
+    position: absolute;
+    width: 120px;
+    height: 30px;
+    background-color: #d50000;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    animation: ribbonMovement 3s infinite ease-in-out;
+}
+
+@keyframes ribbonMovement {
+    0% { left: -150px; opacity: 0; }
+    25% { opacity: 1; }
+    50% { left: 50%; opacity: 0; }
+    75% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+}

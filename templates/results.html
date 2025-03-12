@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allergenic Parameters Tester - Results</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f3f3;
+            color: #800000;
+        }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #800000;
+        }
+        .results-container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #800000;
+            color: white;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+        button {
+            background-color: #800000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        button:hover {
+            background-color: #9b0000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Allergenic Parameters Tester - Results</h1>
+    <div class="results-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Query Name</th>
+                    <th>Molecular Weight</th>
+                    <th>Hydrophobicity</th>
+                    <th>Tanimoto Coefficient</th>
+                    <th>Antigenicity Score</th>
+                    <th>IgE Binding Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                <tr>
+                    <td>{{ result.name }}</td>
+                    <td>{{ result.molecular_weight }}</td>
+                    <td>{{ result.hydrophobicity }}</td>
+                    <td>{{ result.tanimoto_coefficient }}</td>
+                    <td>{{ result.antigenicity_score }}</td>
+                    <td>{{ result.ige_binding_score }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button onclick="window.location.href='/'">Upload Another File</button>
+    </div>
+</body>
+</html>

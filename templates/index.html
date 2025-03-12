@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allergenic Parameters Tester</title>
+
+    <!-- Importing the Lana Del Rey-like vintage font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Applying background and font styles */
+        body {
+            font-family: 'Dancing Script', cursive;  /* Vintage font */
+            background-image: url('/static/images/protein_structure_watermark.png'); /* Protein structure watermark */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            color: #800000;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Optional: Adding a semi-transparent overlay for better readability */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+            z-index: -1;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            color: #d50000; /* Red to match Lana's style */
+            margin-top: 100px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Description under the title */
+        .description {
+            font-size: 20px;
+            color: #ff7f7f;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        .description ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .description li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .upload-container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Light transparent background for upload area */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .upload-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .upload-container input[type="file"] {
+            margin: 20px 0;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .upload-container button {
+            background-color: #800000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .upload-container button:hover {
+            background-color: #9b0000;
+            transition: background-color 0.3s;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Tool title -->
+    <h1>Allergenic Parameters Tester</h1>
+
+    <!-- Description of the tool's capabilities -->
+    <div class="description">
+        <p>This tool can only take 25 sequences at a time and predicts:</p>
+        <ul>
+            <li>Protein molecular weight</li>
+            <li>Hydrophobicity/Hydrophilicity</li>
+            <li>Tanimoto Coefficient</li>
+            <li>Antigenicity score</li>
+            <li>IgE binding score (simulated ELISA)</li>
+        </ul>
+    </div>
+
+    <!-- Upload container where users can upload their FASTA files -->
+    <div class="upload-container">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".fasta, .fa" required>
+            <button type="submit">Upload File</button>
+        </form>
+    </div>
+
+</body>
+</html>
